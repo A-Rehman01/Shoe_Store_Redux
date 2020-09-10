@@ -107,11 +107,11 @@ export function Navbar() {
         </MenuItem>
         <MenuItem>
           <IconButton aria-label="show 11 new notifications" color="inherit">
-            <a href="#">
+            <a href="https://github.com/A-Rehman01/Shoe_Store_Redux">
               <GitHubIcon style={{ color: 'black' }} />
             </a>
           </IconButton>
-          <a href="#">
+          <a  href="https://github.com/A-Rehman01/Shoe_Store_Redux">
             <p style={{ color: 'black' ,textDecoration:'none' }}>GitHub</p>
           </a>
         </MenuItem>
@@ -152,7 +152,7 @@ export function Navbar() {
               </IconButton>
 
               <IconButton aria-label="show 17 new notifications" color="inherit">
-                <a href="#">
+                <a href="https://github.com/A-Rehman01/Shoe_Store_Redux">
                   <GitHubIcon style={{ fontSize: '32px', marginTop: '3px', color: 'white', textDecoration: 'none' }} />
                 </a>
               </IconButton>
