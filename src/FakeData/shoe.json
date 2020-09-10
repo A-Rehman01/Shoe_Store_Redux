@@ -1,0 +1,57 @@
+ 
+{
+    "air-jordan-3-valor-blue": {
+      "id": "001",
+      "Price": 4000,
+      "totalPrice": 4000,
+      "Quantity": 1,
+      "name": "Nike Air Force ",
+      "discription": "The Nike Air Force 1 '07 Worldwide puts a fresh spin on what you know best: crisp leather, bold colours and the perfect amount of flash to make you shine. Featuring Nike Worldwide graphics throughout, it celebrates the diversity of the game while keeping true to off-court style.",
+      "img": "https://github.com/ahmedali8/react-shoe-store/blob/master/public/assets/images/shoe-1.png?raw=true"
+    },
+    "jordan-mars-270-london": {
+      "id": "002",
+      "Price": 6000,
+      "totalPrice": 6000,
+      "Quantity": 1,
+      "name": "Nike Air Zoom",
+      "discription":"The Nike Air Zoom Pegasus 37 BETRUE lets you celebrate and honor the LGBTQIA+ community. Its breathable upper features a gradient rainbow with matching Swoosh. Details on the tongue and eyelets add a perfect shine. Nike React foam combines with Zoom Air to cushion your journey.",
+      "img": "https://github.com/ahmedali8/react-shoe-store/blob/master/public/assets/images/shoe-2.png?raw=true"
+    },
+    "air-jordan-1-zoom-racer-blue": {
+      "id": "003",
+      "Price": 3000,
+      "Quantity": 1,
+      "totalPrice": 3000,
+      "name": "Nike Air VaporMax",
+      "discription": "Inspired by heritage running shoes like the 2006 Air Max 360, the Nike Air VaporMax 360 re-imagines full-length Air with its lighter, more flexible design. The full-length foam midsole adds to the comfort while bold colours create a fresh, modern look.",
+      "img": "https://github.com/ahmedali8/react-shoe-store/blob/master/public/assets/images/shoe-3.png?raw=true"
+    },
+    "air-jordan-3-valor-blue1": {
+      "id": "004",
+      "Price": 5000,
+      "totalPrice": 5000,
+      "Quantity": 1,
+      "name": "Nike CruzrOne ",
+      "discription":"Designed for steady, easy-paced movement, the Nike CruzrOne keeps you going. Its rocker-shaped sole and plush, lightweight cushioning let you move naturally and comfortably. The padded collar is lined with soft wool, adding luxury to every step, while mesh details let your foot breathe. There's no finish line—there's only you, one step after the next.",
+      "img": "https://github.com/ahmedali8/react-shoe-store/blob/master/public/assets/images/shoe-4.png?raw=true"
+    },
+    "jordan-mars-270-london2": {
+      "id": "005",
+      "Price": 6000,
+      "Quantity": 1,
+      "totalPrice": 6000,
+      "name": "Nike Joyride Run",
+      "discription": "The Nike Joyride Run Flyknit is designed to help make running feel easier and give your legs a day off. Tiny foam beads underfoot contour to your foot for cushioning that stands up to your mileage.",
+      "img": "https://github.com/ahmedali8/react-shoe-store/blob/master/public/assets/images/shoe-5.png?raw=true"
+    },
+    "air-jordan-1-zoom-racer-blue3": {
+      "id": "006",
+      "Price": 4000,
+      "Quantity": 1,
+      "totalPrice": 4000,
+      "name": "LeBron 7 QS",
+      "discription": "Make your head-turning journey to the top comfortable. Built strong and sleek, the LeBron 7 QS features a mix of materials on the upper for a look that lasts. Metal accents and multiple LeBron crests celebrate a king, while full-length cushioning graces your every step.",
+      "img": "https://github.com/ahmedali8/react-shoe-store/blob/master/public/assets/images/shoe-6.png?raw=true"
+    }
+  }

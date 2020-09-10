@@ -3,13 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter as Router} from 'react-router-dom'
+import { MirageServer } from './Server/MirageServer'
+import { Provider } from 'react-redux';
+import { ShoeStore } from './Reducer/Store'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+
+MirageServer({ environment: 'development' })
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-    <App />
-    </Router>
+
+    <Provider store={ShoeStore}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

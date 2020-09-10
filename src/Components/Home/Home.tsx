@@ -1,8 +1,13 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 import style from './home.module.css'
+import { useNavigate } from 'react-router-dom'
+import  {InitialData} from '../../Reducer/ShoeSlice'
+import {useDispatch} from 'react-redux'
 
 export const Home = () => {
+    const dispatch=useDispatch();
+    const navigate = useNavigate();
     return (
         <div >
             <div className={style.Container}>
@@ -18,8 +23,14 @@ export const Home = () => {
                     <img className={style.shoeimage} src="https://github.com/ahmedali8/react-shoe-store/blob/master/public/assets/images/shoe-6.png?raw=true"
                         alt="ShoeDisplayImage" />
                 </div>
-                <Button   className={style.btn} variant="contained" color="secondary">
-                      Secondary
+                <Button className={style.btn} variant="contained" color="secondary"
+                    onClick={() => {
+                        dispatch(InitialData())
+                        navigate('/product/')
+                    }}
+
+                >
+                    Shopping Now
                 </Button>
             </div>
 
