@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import {URL} from '../Server/MirageServer'
+import { URL } from '../Server/MirageServer'
 
 export const InitialData = createAsyncThunk(
     'getdatafromapi',
@@ -9,7 +9,7 @@ export const InitialData = createAsyncThunk(
         let response = await fetch(URL)
         let data = await response.json()
         console.log(data)
-        return  data
+        return data
     }
 )
 
@@ -17,11 +17,16 @@ export const ShoeSlice = createSlice({
     name: 'shoe',
     initialState: {
         value: [],
+        cart: [],
     },
+
     isloading: false,
     reducers: {
-        increment: (state) => {
-            state.value += 1;
+        Additem: (state, action) => {
+            return {
+                ...state,
+                cart: [action.payload, ...state.cart]
+            }
         },
         decrement: (state) => {
             state.value -= 1;
@@ -31,6 +36,7 @@ export const ShoeSlice = createSlice({
         [InitialData.fulfilled]: (state, action) => {
             console.log(state, action)
             state.value = action.payload;
+
         },
         [InitialData.reject]: (state, action) => {
             console.log('API Rejected');
@@ -42,12 +48,18 @@ export const ShoeSlice = createSlice({
     }
 })
 
-export const { increment, decrement, reset } = ShoeSlice.actions;
+export const { Additem } = ShoeSlice.actions;
 
 export const shoeData = (state) => {
     return ({
         value: state.shoe.value,
-        loading: state.shoe.isloading
+        loading: state.shoe.isloading,
+
+    })
+}
+export const CartData = (state) => {
+    return ({
+        Addcart: state.shoe.cart,
     })
 }
 export default ShoeSlice.reducer;

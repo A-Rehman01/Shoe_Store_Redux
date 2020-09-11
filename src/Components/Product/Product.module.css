@@ -1,0 +1,87 @@
+/* .Caontainer{
+    position: relative;
+    width: 1150px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+} */
+.ProductCart{
+    display: flex !important;
+    justify-content: space-around !important;
+    flex-wrap: wrap;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.card{
+    position: relative;
+    width: 290px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px  solid #7DCEA0;  
+    box-shadow: 0  15px 15px #A9DFBF;
+    transform:0.5s;
+}
+.circle{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #1ABC9C;
+    clip-path: circle(100px at left 0px); 
+}
+
+.content{
+    position: absolute;
+    bottom: 10px;
+    padding: 20px;
+    text-align: left;
+}
+.detail{
+    font-family: 'Gayathri', sans-serif;
+    color: gray;
+}
+
+.Maintitle{
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 30px !important;  
+    font-family: 'Bree Serif', serif;
+    font-size: 26px !important;
+    color: #27AE60;
+    font-weight: bolder;
+    text-shadow: 3px 3px 5px #ABEBC6;
+    text-transform: uppercase; 
+}
+.title{
+    margin-top: 10px !important;  
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+    color: #27AE60;
+    text-shadow: 3px 3px 5px #ABEBC6;
+    text-transform: uppercase; 
+}
+.button{
+    margin-top: 5px !important;   
+    background-image: linear-gradient( to  right,#52BE80,#7DCEA0) !important;
+    
+}
+
+.image{
+    /* position: relative;
+    right: 5px; */
+    width: 240px;
+}
+.cardiv{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px !important;
+}
+@media screen and (max-width: 480px) {
+    .cardiv{
+        margin-top: 20px !important;
+    }
+    
+}

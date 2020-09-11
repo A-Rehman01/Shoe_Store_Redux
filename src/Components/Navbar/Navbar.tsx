@@ -12,6 +12,9 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import StoreIcon from '@material-ui/icons/Store';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Link } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import  {InitialData} from '../../Reducer/ShoeSlice'
+
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -54,6 +57,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function Navbar() {
+  const dispatch=useDispatch();
+
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -87,7 +92,7 @@ export function Navbar() {
             <StoreIcon style={{ color: 'black' }} />
           </Link>
         </IconButton>
-        <Link to='/product'>
+        <Link to='/product' onClick={()=>{dispatch(InitialData())}}>
           <p style={{ color: 'black' ,textDecoration:'none' }}>Product</p>
         </Link>
       </MenuItem>
@@ -138,8 +143,8 @@ export function Navbar() {
             <div className={classes.sectionDesktop}>
 
               <IconButton aria-label="show 4 new mails" color="inherit">
-                <Link to='/product'>
-                  <StoreIcon style={{ fontSize: '32px', marginTop: '3px', color: 'white', textDecoration: 'none' }} />
+                <Link to='/product' onClick={()=>{dispatch(InitialData())}}>
+                  <StoreIcon  style={{ fontSize: '32px', marginTop: '3px', color: 'white', textDecoration: 'none' }} />
                 </Link>
               </IconButton>
 

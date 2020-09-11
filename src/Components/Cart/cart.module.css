@@ -1,0 +1,56 @@
+.cartContainer{
+    overflow-x:auto
+}
+.table{
+   margin-top: 30px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;    
+}
+.table th , td {
+    font-family: 'Bree Serif', serif;
+   text-transform: capitalize;
+    text-align: center;
+    padding: 10px;
+}
+.imgtd{
+ padding: 5px;   
+}
+table,th,td{
+    border: 1px solid black;    
+}
+.Shoeimg{
+    width: 140px;
+}
+.add{
+    background-color: black;
+    color: white;
+    padding: 6px 8px 6px 8px;
+    margin-right: 4px;
+    border-radius: 3px;
+    border: 1px solid white;
+}
+.sub{
+    background-color: white;
+    color: black;
+    padding: 6px 8px 6px 8px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.empty{
+    display: flex;
+    justify-content: center;
+    font-family: 'Bree Serif', serif;
+    font-size: 28px;
+    color: black;
+    margin-top: 25px;
+    text-shadow: 3px 3px 5px #ABEBC6;
+    text-transform: uppercase;
+    text-align: center;
+}
+@media screen and (max-width: 480px) {
+    .Shoeimg{
+        width: 40px;
+    }
+}
