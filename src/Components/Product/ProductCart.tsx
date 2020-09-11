@@ -49,6 +49,9 @@ export const ProductCart: React.FC<Props> = ({ name, price, Quantity, img, id, t
                                 if (obj.id === id) {
                                     check = true;
                                 }
+                                return(
+                                    <></>
+                                )
                             })
                             if (check) {
                                 console.log('notadd')
