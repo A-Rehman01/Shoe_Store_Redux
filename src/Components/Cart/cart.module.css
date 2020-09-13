@@ -75,4 +75,7 @@ table,th,td{
     .Shoeimg{
         width: 40px;
     }
+    .table th , td{
+        font-size: 17.5px !important;
+    }
 }
