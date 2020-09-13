@@ -12,9 +12,9 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import StoreIcon from '@material-ui/icons/Store';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Link } from 'react-router-dom';
-import {useDispatch} from 'react-redux'
-import  {InitialData} from '../../Reducer/ShoeSlice'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { InitialData } from '../../Reducer/ShoeSlice'
+import { ItemData } from '../../Reducer/ShoeSlice'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -56,8 +56,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export function Navbar() {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
+  let itemdata = useSelector(ItemData);
+
+  let Item = itemdata.toString()
 
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -92,91 +96,91 @@ export function Navbar() {
             <StoreIcon style={{ color: 'black' }} />
           </Link>
         </IconButton>
-        <Link to='/product' onClick={()=>{dispatch(InitialData())}}>
-          <p style={{ color: 'black' ,textDecoration:'none' }}>Product</p>
+        <Link to='/product' onClick={() => { dispatch(InitialData()) }}>
+          <p style={{ color: 'black', textDecoration: 'none' }}>Product</p>
         </Link>
       </MenuItem>
       <MenuItem>
-          <IconButton aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <Link to='/cart'>
-                <ShoppingCartIcon style={{ color: 'black' }} />
-              </Link>
-            </Badge>
-          </IconButton>
-          <Link to='/cart'>
-            <p style={{ color: 'black' ,textDecoration:'none' }}>
-              Shopping
+        <IconButton aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={itemdata === 0 ? null : Item} color="secondary">
+            <Link to='/cart'>
+              <ShoppingCartIcon style={{ color: 'black' }} />
+            </Link>
+          </Badge>
+        </IconButton>
+        <Link to='/cart'>
+          <p style={{ color: 'black', textDecoration: 'none' }}>
+            Shopping
          </p>
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <IconButton aria-label="show 11 new notifications" color="inherit">
-            <a href="https://github.com/A-Rehman01/Shoe_Store_Redux">
-              <GitHubIcon style={{ color: 'black' }} />
-            </a>
-          </IconButton>
-          <a  href="https://github.com/A-Rehman01/Shoe_Store_Redux">
-            <p style={{ color: 'black' ,textDecoration:'none' }}>GitHub</p>
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="show 11 new notifications" color="inherit">
+          <a href="https://github.com/A-Rehman01/Shoe_Store_Redux">
+            <GitHubIcon style={{ color: 'black' }} />
           </a>
-        </MenuItem>
+        </IconButton>
+        <a href="https://github.com/A-Rehman01/Shoe_Store_Redux">
+          <p style={{ color: 'black', textDecoration: 'none' }}>GitHub</p>
+        </a>
+      </MenuItem>
 
     </Menu>
   );
 
   return (
-      <div className={classes.grow}>
-        <AppBar style={{ backgroundColor: '#1ABC9C' }} position="static">
-          <Toolbar>
+    <div className={classes.grow}>
+      <AppBar style={{ backgroundColor: '#1ABC9C' }} position="static">
+        <Toolbar>
 
-            <Link to='/'>
-              <img className={classes.Nikelogo}
-                src="https://www.freepngimg.com/thumb/shoes/27428-5-nike-shoes-transparent-background-thumb.png" alt="Logo" />
+          <Link to='/'>
+            <img className={classes.Nikelogo}
+              src="https://www.freepngimg.com/thumb/shoes/27428-5-nike-shoes-transparent-background-thumb.png" alt="Logo" />
+          </Link>
+          <Typography className={classes.title} variant="h6" >
+            <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
+              Store
             </Link>
-            <Typography className={classes.title} variant="h6" >
-              <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
-                Store
-            </Link>
-            </Typography>
+          </Typography>
 
-            <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
 
-              <IconButton aria-label="show 4 new mails" color="inherit">
-                <Link to='/product' onClick={()=>{dispatch(InitialData())}}>
-                  <StoreIcon  style={{ fontSize: '32px', marginTop: '3px', color: 'white', textDecoration: 'none' }} />
+            <IconButton aria-label="show 4 new mails" color="inherit">
+              <Link to='/product' onClick={() => { dispatch(InitialData()) }}>
+                <StoreIcon style={{ fontSize: '32px', marginTop: '3px', color: 'white', textDecoration: 'none' }} />
+              </Link>
+            </IconButton>
+
+            <IconButton aria-label="show 4 new mails" color="inherit">
+              <Badge badgeContent={itemdata === 0 ? null : Item} style={{ marginTop: '5px' }} color="secondary">
+                <Link to='/cart'>
+                  <ShoppingCartIcon style={{ fontSize: '34px', color: 'white', textDecoration: 'none' }} />
                 </Link>
-              </IconButton>
+              </Badge>
+            </IconButton>
 
-              <IconButton aria-label="show 4 new mails" color="inherit">
-                <Badge badgeContent={4} style={{ marginTop: '5px' }} color="secondary">
-                  <Link to='/cart'>
-                    <ShoppingCartIcon style={{ fontSize: '34px', color: 'white', textDecoration: 'none' }} />
-                  </Link>
-                </Badge>
-              </IconButton>
+            <IconButton aria-label="show 17 new notifications" color="inherit">
+              <a href="https://github.com/A-Rehman01/Shoe_Store_Redux">
+                <GitHubIcon style={{ fontSize: '32px', marginTop: '3px', color: 'white', textDecoration: 'none' }} />
+              </a>
+            </IconButton>
 
-              <IconButton aria-label="show 17 new notifications" color="inherit">
-                <a href="https://github.com/A-Rehman01/Shoe_Store_Redux">
-                  <GitHubIcon style={{ fontSize: '32px', marginTop: '3px', color: 'white', textDecoration: 'none' }} />
-                </a>
-              </IconButton>
-
-            </div>
-            <div className={classes.sectionMobile}>
-              <IconButton
-                aria-label="show more"
-                aria-controls={mobileMenuId}
-                aria-haspopup="true"
-                onClick={handleMobileMenuOpen}
-                color="inherit"
-              >
-                <MoreIcon />
-              </IconButton>
-            </div>
-          </Toolbar>
-        </AppBar>
-        {renderMobileMenu}
-      </div>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+    </div>
   );
 }

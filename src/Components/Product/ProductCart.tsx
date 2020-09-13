@@ -2,7 +2,7 @@ import React from 'react'
 import style from './Product.module.css';
 import Button from '@material-ui/core/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { Additem, CartData } from '../../Reducer/ShoeSlice'
+import { Additem, CartData,AddMenu } from '../../Reducer/ShoeSlice'
 
 type Props = {
     name: string;
@@ -15,12 +15,12 @@ type Props = {
 
 export const ProductCart: React.FC<Props> = ({ name, price, Quantity, img, id, totalPrice }) => {
     let tempShoe = {
-        name: name,
-        price: price,
-        Quantity: Quantity,
-        img: img,
-        id: id,
-        totalPrice: totalPrice
+        name,
+        price,
+        Quantity,
+        img,
+        id,
+        totalPrice
     }
     const dispatch = useDispatch();
     const cartdata = useSelector(CartData);
@@ -59,6 +59,7 @@ export const ProductCart: React.FC<Props> = ({ name, price, Quantity, img, id, t
                             else {
                                 console.log('add')
                                 dispatch(Additem(tempShoe))
+                                dispatch(AddMenu(''))
                             }
                         }}
                     >

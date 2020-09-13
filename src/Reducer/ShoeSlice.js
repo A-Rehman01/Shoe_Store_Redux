@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-
 import { URL } from '../Server/MirageServer'
 
 export const InitialData = createAsyncThunk(
@@ -18,19 +17,89 @@ export const ShoeSlice = createSlice({
     initialState: {
         value: [],
         cart: [],
+        Items: 0
     },
-
     isloading: false,
     reducers: {
         Additem: (state, action) => {
             return {
                 ...state,
-                cart: [action.payload, ...state.cart]
+                cart: [action.payload, ...state.cart],
+               
             }
         },
-        decrement: (state) => {
-            state.value -= 1;
+        AddMenu:(state)=>{
+            state.Items++;
         },
+        DelItem: (state, action) => {
+            return {
+                ...state,
+                cart: state.cart.filter((obj) => {
+                    console.log(obj.id)
+                    return (
+                        obj.id !== action.payload
+                    )
+                }),
+            }
+        },
+        DelMenu:(state)=>{
+            state.Items--;
+        },
+        AddQuantity: (state, action) => {
+            return {
+                ...state,
+                cart: state.cart.map((item) => {
+                    if (item.id === action.payload) {
+                        console.log('yes')
+                        let tempShoe = {
+                            name: item.name,
+                            price: item.price,
+                            Quantity: item.Quantity + 1,
+                            img: item.img,
+                            id: item.id,
+                            totalPrice: item.totalPrice + item.price
+                        }
+                        console.log(tempShoe.Quantity)
+                        return tempShoe
+                    }
+                    else {
+                        return item
+                    }
+
+                })
+            }
+        },
+        DelQuantity: (state, action) => {
+            return {
+                ...state,
+                cart: state.cart.map((item) => {
+                    if (item.id === action.payload) {
+                        console.log('yes')
+                        let tempShoe = {
+                            name: item.name,
+                            price: item.price,
+                            Quantity: item.Quantity - 1,
+                            img: item.img,
+                            id: item.id,
+                            totalPrice: item.totalPrice - item.price
+                        }
+                        console.log(tempShoe.Quantity)
+                        return tempShoe
+                    }
+                    else {
+                        return item
+                    }
+
+                })
+            }
+        },
+        CheckOut: (state) => {
+            return {
+                ...state,
+                cart: []
+            }
+        }
+
     },
     extraReducers: {
         [InitialData.fulfilled]: (state, action) => {
@@ -48,7 +117,7 @@ export const ShoeSlice = createSlice({
     }
 })
 
-export const { Additem } = ShoeSlice.actions;
+export const { Additem,AddMenu,DelMenu, DelItem, AddQuantity, DelQuantity, CheckOut } = ShoeSlice.actions;
 
 export const shoeData = (state) => {
     return ({
@@ -62,4 +131,7 @@ export const CartData = (state) => {
         Addcart: state.shoe.cart,
     })
 }
+
+export const ItemData = (state) =>(state.shoe.Items)
+        
 export default ShoeSlice.reducer;

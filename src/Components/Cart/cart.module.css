@@ -13,6 +13,7 @@
    text-transform: capitalize;
     text-align: center;
     padding: 10px;
+    font-size: 19px;
 }
 .imgtd{
  padding: 5px;   
@@ -48,6 +49,27 @@ table,th,td{
     text-shadow: 3px 3px 5px #ABEBC6;
     text-transform: uppercase;
     text-align: center;
+}
+.Tprice{
+    display: flex;
+    justify-content: center;
+    font-family: 'Bree Serif', serif;
+    font-size: 23px;
+    color: black;
+    margin-top: 25px;
+    text-shadow: 3px 3px 5px #ABEBC6;
+    text-transform: capitalize;
+    text-align: center;
+}
+.Checkout{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px  !important;
+
+}
+.Checkoutbtn{
+    background-image: linear-gradient( to  right,#52BE80,#7DCEA0) !important;
+
 }
 @media screen and (max-width: 480px) {
     .Shoeimg{
